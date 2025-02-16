@@ -4,11 +4,13 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include "card.h"
+
 using namespace std;
 
 class List {
     private:
-    list<Card> cardList;
+    //list<Card> cardList;
     string title;
     string topic;
     string description;

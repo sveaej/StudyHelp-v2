@@ -24,6 +24,7 @@ int printMainMenu() {
     cout << "\nPlease select an option to get started." << endl;
     cout << "1. Flash cards\n2. Spelling practice\n3. Test\n4. Print list\n5. Edit list\n6. Use a different list\n7. Quit" << endl;
     cout << "\nType in the number corresponding to your choice." << endl;
+    cin >> choice;
     return choice;
 }
 
@@ -38,9 +39,10 @@ bool saveListMenu(List &currentList) {
         cin >> choice;
         switch(choice) {
             case 'y':
-                currentList.saveList(); //writes the current list to a file
+                //currentList.saveList(); //writes the current list to a file
                 //could have this return a bool later so we know whether it was successful
                 isSaved = true;
+                cout << "\nSaving the list..." << endl;
                 stop = true;
                 break;
             case 'n':
@@ -77,7 +79,7 @@ bool createNewList(List &newList) {
                 cout << "Very well." << endl;
                 break;
             default:
-                cout << "I don't understand that option." << endl;
+                cout << "I don't understand that option 2." << endl;
                 break;
         }
     } while(choice != 'y' && choice != 'n');
@@ -131,7 +133,7 @@ List getCurrentList() {
                 stop = true;
                 break;
             default:
-                cout << "I don't understand that option." << endl;
+                cout << "I don't understand that option. 3" << endl;
                 stop = false;
                 break;
         }
@@ -188,7 +190,8 @@ int main(int argc, char* argv[]) {
                 stop = true;
                 break;
             default:
-                cout << "I don't understand that option." << endl;
+                cout << "I don't understand that option. 4" << endl;
+                stop = true;
                 break;
         }
     } while (!stop);
